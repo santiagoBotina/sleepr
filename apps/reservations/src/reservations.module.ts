@@ -7,6 +7,7 @@ import {
 import { ReservationsController } from './reservations.controller';
 import { ReservationsRepository } from './reservations.repository';
 import { ReservationsService } from './reservations.service';
+import { LoggerModule } from '@app/common';
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { ReservationsService } from './reservations.service';
     DatabaseModule.forFeature([
       { name: ReservationDocument.name, schema: ReservationSchema },
     ]),
+    LoggerModule,
   ],
   controllers: [ReservationsController],
   providers: [ReservationsService, ReservationsRepository],
