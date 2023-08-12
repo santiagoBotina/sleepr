@@ -20,7 +20,7 @@ export abstract class AbstractRepository<TDocument extends AbstractDocument> {
 
     if (!document) {
       this.logger.warn('Document not found with filterQuery', filterQuery);
-      throw new NotFoundException('Docuemtn not found');
+      throw new NotFoundException('Document not found');
     }
 
     return document;
@@ -37,7 +37,7 @@ export abstract class AbstractRepository<TDocument extends AbstractDocument> {
 
     if (!document) {
       this.logger.warn('Document not found with filterQuery', filterQuery);
-      throw new NotFoundException('Docuemtn not found');
+      throw new NotFoundException('Document not found');
     }
 
     return document;
