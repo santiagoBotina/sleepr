@@ -2,7 +2,6 @@ import {
   ConflictException,
   Injectable,
   UnauthorizedException,
-  UnprocessableEntityException,
 } from '@nestjs/common';
 import * as bcrypt from 'bcryptjs';
 import { GetUserDto } from '../dto/get-user.dto';
