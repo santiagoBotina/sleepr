@@ -7,7 +7,7 @@ import * as Joi from 'joi';
 import {
   ReservationDocument,
   ReservationSchema,
-} from './entities/reservation.schema';
+} from '@app/common/models/reservation.schema';
 import { ReservationsController } from './reservations.controller';
 import { ReservationsRepository } from './reservations.repository';
 import { ReservationsService } from './reservations.service';

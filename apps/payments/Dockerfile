@@ -6,10 +6,14 @@ COPY package.json ./
 COPY pnpm-lock.yaml ./
 
 RUN npm install pnpm -g
+COPY tsconfig.json tsconfig.json
+
+RUN npm install pnpm -g
 
 RUN pnpm install
 
-COPY . .
+COPY apps/reservations /apps/reservations
+COPY libs libs
 
 RUN pnpm run build
 

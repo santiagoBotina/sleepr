@@ -1,7 +1,7 @@
 import { AbstractRepository } from '@app/common/database/abstract.repository';
 import { Injectable, Logger } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { ReservationDocument } from './entities/reservation.schema';
+import { ReservationDocument } from '@app/common/models/reservation.schema';
 import { Model } from 'mongoose';
 
 @Injectable()
