@@ -35,7 +35,7 @@ steps:
       '-t',
       'us-east4-docker.pkg.dev/sleepr-398121/notifications/production',
       '-f',
-      'apps/reservations/Dockerfile',
+      'apps/notifications/Dockerfile',
       '. '
     ]
   - name: 'gcr.io/cloud-builders/docker'
@@ -50,7 +50,7 @@ steps:
       '-t',
       'us-east4-docker.pkg.dev/sleepr-398121/auth/production',
       '-f',
-      'apps/reservations/Dockerfile',
+      'apps/auth/Dockerfile',
       '. '
     ]
   - name: 'gcr.io/cloud-builders/docker'
