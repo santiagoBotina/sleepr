@@ -6,12 +6,14 @@ COPY package.json ./
 COPY pnpm-lock.yaml ./
 COPY tsconfig.json tsconfig.json
 
-RUN npm install pnpm -g
+RUN npm install -g pnpm
 
 RUN pnpm install
 
-COPY apps/auth /apps/auth
+COPY apps/auth apps/auth
 COPY libs libs
+
+RUN cd apps/auth && pnpm install
 
 RUN pnpm run build
 
