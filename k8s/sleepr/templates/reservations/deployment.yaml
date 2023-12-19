@@ -17,9 +17,22 @@ spec:
       containers:
         - image: us-east4-docker.pkg.dev/sleepr-398121/reservations/production
           name: reservations
+          ports:
+            - containerPort: 3004
           env:
             - name: MONGO_DB_URL
               valueFrom:
                 secretKeyRef:
                   name: mongodb
                   key: connectionString
+            - name: PORT
+              value: "3004"
+            - name: AUTH_PORT
+              value: '3002'
+            - name: AUTH_HOST
+              value: auth-tcp
+            - name: PAYMENTS_PORT
+              value: '3001'
+            - name: PAYMENTS_HOST
+              value: payments
+

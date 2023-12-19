@@ -17,9 +17,23 @@ spec:
       containers:
         - image: us-east4-docker.pkg.dev/sleepr-398121/auth/production
           name: production
+          ports:
+            - containerPort: 3002
+            - containerPort: 3003
           env:
             - name: MONGO_DB_URL
               valueFrom:
                 secretKeyRef:
                   name: mongodb
                   key: connectionString
+            - name: SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: jwt-secret-key
+                  key: SECRET_KEY
+            - name: JWT_EXPIRATION
+              value: '3600'
+            - name: TCP_PORT
+              value: '3002'
+            - name: HTTP_PORT
+              value: '3003'
